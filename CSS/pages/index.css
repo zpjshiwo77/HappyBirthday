@@ -1,0 +1,162 @@
+@font-face { font-family: KAI; src: url('../font/kai.ttf');}
+/************************* PC ************************/
+@media screen and (max-width:2560px) and (min-width:1000px){
+
+}
+
+/************************* mobile pad ************************/
+@media screen and (max-width:1000px){
+    .wrap{
+        height: auto;
+        overflow-x: hidden;
+    }
+
+    .icon{
+        position: absolute;
+        width: 0.6rem;
+        height: 0.6rem;
+    }
+
+    .photoPage, .photoPage .block{
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    
+    .photoPage .block .shoadow{
+        z-index: 2;
+        background-color: rgba(0,0,0,0.6);
+    }
+    
+    .photoPage .block.row .sizeBox{
+        width: 50%;
+        opacity: 0;
+    }
+    .photoPage .block.col .sizeBox{
+        width: 200%;
+        opacity: 0;
+    }
+
+    .photoPage .block .leftBox{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100%;
+        transform-origin: top center;
+    }
+    .photoPage .block .rightBox{
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 50%;
+        height: 100%;
+        transform-origin: top center;
+    }
+    .photoPage .block .topBox{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 50%;
+        transform-origin: bottom center;
+    }
+    .photoPage .block .bottomBox{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 50%;
+        transform-origin: top center;
+    }
+
+    .photoPage .block .wordBox{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(137,191,187,0.9);
+        pointer-events: none;
+    }
+    .photoPage .block .wordBox.top{
+        top: -76%;
+        right: 0;
+        height: 76%;
+    }
+    .photoPage .block .wordBox.right{
+        top: 0;
+        right: -76%;
+        width: 76%;
+    }
+    .photoPage .block .wordBox.bottom{
+        bottom: -70%;
+        right: 0;
+        height: 70%;
+    }
+    .photoPage .block .wordBox.left{
+        top: 0;
+        left: -76%;
+        width: 76%;
+    }
+    .photoPage .block .wordBox .word{
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        height: auto;
+        transform: translate(0, -50%);
+    }
+    .photoPage .block .wordBox .word p{
+        font-size: 0.2rem;
+        color: #fff;
+        font-family: KAI;
+        text-align: center;
+        line-height: 1.2;
+    }
+
+    .photoPage .block .timeBox{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0.7rem;
+        background-color: #fff;
+    }
+    .photoPage .block .time{
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 0.7rem;
+        background-color: rgb(220,220,220);
+        font-size: 0.2rem;
+        text-align: right;
+        line-height: 0.7rem;
+        padding-right: 0.25rem;
+    }
+    .photoPage .block .timeBox .timeWord{
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        height: auto;
+        transform: translate(0, -50%);
+    }
+    .photoPage .block .timeBox .timeWord .word{
+        font-size: 0.24rem;
+        text-align: center;
+        line-height: 2;
+        font-style: italic;
+        font-weight: bold;
+    }
+    .photoPage .block .timeBox .timeWord .word span{
+        font-size: 0.24rem;
+        color: rgb(235, 110, 98);
+    }
+
+}
+
+/************************* 15:9 ************************/
+.screen159{}
+
+/************************* 18:9 ************************/
+.screen189{}
