@@ -17,6 +17,13 @@
         height: 0.6rem;
     }
 
+    .sphoto{
+        float: left;
+        width: 50%;
+        height: 50%;
+        background-color: rgba(137,191,187);
+    }
+
     .photoPage, .photoPage .block{
         width: 100%;
         height: auto;
@@ -51,7 +58,7 @@
         right: 0;
         width: 50%;
         height: 100%;
-        transform-origin: top center;
+        transform-origin: bottom center;
     }
     .photoPage .block .topBox{
         position: absolute;
