@@ -12,8 +12,33 @@ $(document).ready(function () {
 		wrap.hide();
 		loadInit();
 		eventBind();
+		sound_handler();
 	}//end func
 	pageInit();
+
+	function sound_handler() {
+		if (os.weixin) {
+			var wsb = window;
+			if (wsb.WeixinJSBridge) {
+				try {
+					wsb.WeixinJSBridge.invoke("getNetworkType", {}, sound_creat);
+				}
+				catch (e) {
+					wx.ready(sound_creat);
+				}
+			}
+			else {
+				document.addEventListener("WeixinJSBridgeReady", sound_creat, false);
+			}
+		} else {
+			sound_creat();
+		}
+	}//edn func
+
+	function sound_creat() {
+		document.removeEventListener("WeixinJSBridgeReady", sound_creat);
+		ibgm.init({ src: 'audio/bgm.mp3', autoplay: true });
+	}//end func
 
 	/**
 	 * 加载图片
