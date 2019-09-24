@@ -1,5 +1,6 @@
 $(document).ready(function () {
 	//变量的定义
+	var wrap = $(".wrap");
 	var boxShadow = $('.shoadow');
 	var clickFlag = true;
 	var actBox;
@@ -8,6 +9,7 @@ $(document).ready(function () {
 	 * 页面初始化
 	 */
 	function pageInit() {
+		wrap.hide();
 		loadInit();
 		eventBind();
 	}//end func
@@ -19,11 +21,9 @@ $(document).ready(function () {
 	function loadInit() {
 		var loader = new PxLoader();
 		loader.addImage('images/index/photo/1.jpg');
-
-		icom.loadingShow();
+		
 		loader.addCompletionListener(function () {
 			pageShow();
-			icom.loadingHide();
 			loader = null;
 		});
 		loader.start();
@@ -33,7 +33,8 @@ $(document).ready(function () {
 	 * 页面显示
 	 */
 	function pageShow() {
-
+		wrap.fadeIn();
+		indexAnime();
 	}//end func
 
 	/**
@@ -43,6 +44,37 @@ $(document).ready(function () {
 		$(".scaleBox").on("click", scaleBox);
 		boxShadow.on("click", hideScaleBox);
 	}//end func
+
+	/**
+	 * 首页动画
+	 */
+	function indexAnime(){
+		var indexPage = $(".indexPage");
+		var photoPage = $(".photoPage");
+		var bg = $(".indexPage .bg");
+		var iconp = $(".indexPage .iconp");
+		var w1 = $(".indexPage .w1");
+		var w2 = $(".indexPage .w2");
+		var w3 = $(".indexPage .w3");
+		var ar = $(".indexPage .ar");
+
+		photoPage.addClass("overflow");
+
+		bg.transition({opacity:1},1000);
+		iconp.transition({opacity:1,delay:1500},1000);
+		w1.transition({opacity:1,delay:1000},1000);
+		w2.transition({height:"1.81rem",delay:2000},1200);
+		w3.transition({height:"1.29rem",delay:3200},1200);
+		ar.transition({opacity:1,delay:4500},800,function(){
+			indexPage.one("swipeup",function(){
+				photoPage.show();
+				indexPage.transition({y:"-150%"},800,function(){
+					indexPage.hide();
+					photoPage.removeClass("overflow");
+				})
+			})
+		});
+	}
 
 	/**
 	 * 放大照片
