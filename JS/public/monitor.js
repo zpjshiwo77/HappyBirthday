@@ -4,7 +4,13 @@
 **********************/
 
 //百度监测贴这里
-
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?57d94c7744be3a11d25caf1f86e71753";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
 
 //ga监测贴这里
 

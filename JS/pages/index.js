@@ -132,7 +132,20 @@ $(document).ready(function () {
 				tipsShow = false;
 				handTips.fadeOut();
 			}
+
+			monitorPhoto($(this));
 		}
+	}
+
+	/**
+	 * 监测
+	 */
+	function monitorPhoto(ele){
+		var src = ele.find(".photo").attr("src");
+		src = src.split("/");
+		var id = src[3];
+
+		imonitor.add({action:'touchstart',category:'default',label:id});
 	}
 
 	/**
