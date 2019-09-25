@@ -145,7 +145,7 @@ $(document).ready(function () {
 		src = src.split("/");
 		var id = src[3];
 
-		imonitor.add({action:'touchstart',category:'default',label:id});
+		imonitor.addMonitor("相册","首页","首页",id);
 	}
 
 	/**

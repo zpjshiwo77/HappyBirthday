@@ -37,9 +37,10 @@ function importMonitor(){
 	/**
 	 * 页面监测
 	 */
-	_self.addMonitor = function(){
+	_self.addMonitor = function(hmsr,index,category,label){
 		if(window._hmt) _hmt.push(['_trackEvent', hmsr?'来源：'+hmsr:'来源：默认', index, (category!=''?category+'-':'') + label]);
 		if(window.ga) ga('send', 'event', hmsr?'来源：'+hmsr:'来源：默认', index, (category!=''?category+'-':'') + label);
+		console.log(hmsr?'来源：'+hmsr:'来源：默认', index, (category!=''?category+'-':'') + label);
 	}//end func
 
 }//end import
