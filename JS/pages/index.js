@@ -2,7 +2,9 @@ $(document).ready(function () {
 	//变量的定义
 	var wrap = $(".wrap");
 	var boxShadow = $('.shoadow');
+	var handTips = $(".handTips");
 	var clickFlag = true;
+	var tipsShow = false;
 	var actBox;
 
 	/**
@@ -96,6 +98,8 @@ $(document).ready(function () {
 				indexPage.transition({y:"-150%"},800,function(){
 					indexPage.hide();
 					photoPage.removeClass("overflow");
+					tipsShow = true;
+					handTips.fadeIn();
 				})
 			})
 		});
@@ -124,6 +128,10 @@ $(document).ready(function () {
 				clickFlag = true;
 			}, 500);
 
+			if(tipsShow) {
+				tipsShow = false;
+				handTips.fadeOut();
+			}
 		}
 	}
 

@@ -58,6 +58,40 @@
         height: 100vh!important;
         overflow: hidden;
     }
+
+    .photoPage .handTips{
+        position: absolute;
+        top: 1.7rem;
+        left: 1.7rem;
+        width: 2rem;
+        height: 1rem;
+        text-align: center;
+        z-index: 9;
+    }
+    .photoPage .handTips .hand{
+        width: 0.68rem;
+    }
+    .photoPage .handTips p{
+        font-size: 0.26rem;
+        color: #fff;
+        text-shadow: 0 0 7px #333333;
+        padding-top: 0.2rem;
+    }
+    .tipsing {
+        -webkit-animation: tipsing 2s ease infinite;
+    }
+    @-webkit-keyframes tipsing {
+        0% {
+            transform: translate(0, 0);
+        }
+        50% {
+            transform: translate(-0.3rem, -0.2rem);
+        }
+        100% {
+            transform: translate(0, 0);
+        }
+    }
+
     .photoPage, .photoPage .block {
         width: 100%;
         height: auto;

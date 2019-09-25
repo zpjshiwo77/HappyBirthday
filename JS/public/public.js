@@ -21,10 +21,9 @@ $(document).ready(function() {
 function wxShareInit(){
     var url = icom.getDominUrl();
     var shareInfo = {
-        title: "分享标题",
-        desc: "分享文案",
-        link: url, 
-        imgUrl: "http://seventh77.com/timeline/images/templete/test.jpg",
+        title: "毕业相册",
+        timeline: "爱笑的女生运气不会太差",
+        friend: "爱笑的女生运气不会太差"
     }
     var opts = {
         shareInfo: shareInfo
